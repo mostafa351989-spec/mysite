@@ -641,3 +641,46 @@ document.querySelectorAll("button").forEach((btn, i) => {
 });
 </script>
 
+
+<script>
+// ===== AI + Profit Layer (Auto Inject) =====
+
+// تحويل الأزرار لوظائف حقيقية
+document.querySelectorAll("button").forEach(btn=>{
+  const text = btn.innerText;
+
+  btn.addEventListener("click", ()=>{
+    if(text.includes("تحميل")){
+      alert("📦 التحميل غير متاح حاليًا وسيتم تفعيله لاحقًا");
+    }
+
+    else if(text.includes("اتصل")){
+      window.open("https://wa.me/201000000000","_blank");
+    }
+
+    else if(text.includes("اطلب")){
+      let name = prompt("اسمك");
+      let service = prompt("الخدمة المطلوبة");
+
+      let msg = `طلب جديد:%0Aالاسم: ${name}%0Aالخدمة: ${service}`;
+
+      window.open("https://wa.me/201000000000?text="+encodeURIComponent(msg));
+    }
+
+    else {
+      let reply = "🤖 أنا مساعدك الذكي. كيف أساعدك؟";
+      alert(reply);
+    }
+  });
+});
+
+// تحسين بسيط للذكاء
+function ai(text){
+  if(text.includes("سعر")) return "الأسعار تبدأ من 10$";
+  if(text.includes("موقع")) return "نقدر نعمل موقع احترافي لك";
+  return "اسألني عن الخدمات أو الأسعار";
+}
+
+console.log("AI Layer Activated 🚀");
+</script>
+
