@@ -613,3 +613,31 @@ setInterval(()=>{const l=document.getElementById('liveCount');l.textContent=25+M
 </body>
 </html>
 
+
+<script>
+// تحويل الأزرار لوظائف حقيقية تلقائيًا
+document.querySelectorAll("button").forEach((btn, i) => {
+  const text = btn.innerText.trim();
+
+  if (text.includes("تحميل")) {
+    btn.onclick = () => alert("لا يوجد ملف جاهز للتحميل الآن");
+  }
+
+  else if (text.includes("اتصل")) {
+    btn.onclick = () => window.open("https://wa.me/201000000000");
+  }
+
+  else if (text.includes("شراء")) {
+    btn.onclick = () => alert("الدفع غير مفعّل بعد");
+  }
+
+  else if (text.includes("مشاهدة")) {
+    btn.onclick = () => window.open("https://youtube.com");
+  }
+
+  else {
+    btn.onclick = () => alert("هذا الزر غير مخصص بعد");
+  }
+});
+</script>
+
