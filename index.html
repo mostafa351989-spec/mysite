@@ -684,3 +684,34 @@ function ai(text){
 console.log("AI Layer Activated 🚀");
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+document.querySelectorAll("button").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    const text = btn.innerText;
+
+    if(text.includes("تحميل")){
+      alert("التحميل غير متاح الآن");
+    }
+
+    else if(text.includes("اتصل")){
+      window.open("https://wa.me/201000000000","_blank");
+    }
+
+    else if(text.includes("اطلب")){
+      let name = prompt("اسمك");
+      let service = prompt("الخدمة");
+      window.open("https://wa.me/201000000000?text="+encodeURIComponent(name+" - "+service));
+    }
+
+    else {
+      alert("هذا زر نشط الآن");
+    }
+  });
+});
+
+});
+</script>
+
