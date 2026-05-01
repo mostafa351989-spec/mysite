@@ -715,3 +715,44 @@ document.querySelectorAll("button").forEach(btn=>{
 });
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  // تشغيل كل الأزرار
+  document.querySelectorAll("button").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+
+      const text = btn.innerText.trim();
+
+      if(text.includes("تحميل")){
+        alert("⚠️ التحميل غير متاح حالياً");
+      }
+
+      else if(text.includes("اتصل")){
+        window.open("https://wa.me/201000000000","_blank");
+      }
+
+      else if(text.includes("اطلب")){
+        let name = prompt("اسمك");
+        let service = prompt("الخدمة المطلوبة");
+
+        if(name && service){
+          let msg = `طلب جديد:%0Aالاسم: ${name}%0Aالخدمة: ${service}`;
+          window.open("https://wa.me/201000000000?text="+encodeURIComponent(msg));
+        }
+      }
+
+      else {
+        let reply = "🤖 المساعد الذكي: اسأل عن الخدمات أو الأسعار";
+        if(text.includes("سعر")) reply = "💰 الأسعار تبدأ من 10$";
+        if(text.includes("موقع")) reply = "🚀 أقدر أساعدك تعمل موقع احترافي";
+        alert(reply);
+      }
+
+    });
+  });
+
+});
+</script>
+
