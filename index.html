@@ -3,27 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neon Store Pro</title>
+<title>Sci-Fi Neon Store</title>
 
 <style>
-body{margin:0;font-family:Tahoma;background:#05060a;color:#fff}
+body{margin:0;font-family:Tahoma;background:#05060a;color:#fff;overflow-x:hidden}
 .bg{position:fixed;inset:0;background:
-radial-gradient(circle at 10% 10%,#00ff99,transparent 40%),
-radial-gradient(circle at 90% 20%,#00aaff,transparent 40%),
-radial-gradient(circle at 50% 90%,#7c3aed,transparent 40%);
-opacity:0.2;filter:blur(60px);z-index:-1}
-header{text-align:center;padding:60px 20px}
-h1{font-size:42px;color:#00ff99;text-shadow:0 0 15px #00ff99}
+radial-gradient(circle at 20% 20%,#00ff99,transparent 35%),
+radial-gradient(circle at 80% 30%,#00aaff,transparent 40%),
+radial-gradient(circle at 50% 80%,#7c3aed,transparent 40%);
+filter:blur(70px);opacity:0.25;animation:move 10s infinite alternate;z-index:-1}
+@keyframes move{0%{transform:scale(1)}100%{transform:scale(1.25) translate(30px,20px)}}
+header{padding:80px 20px;text-align:center}
+h1{font-size:48px;color:#00ff99;text-shadow:0 0 25px #00ff99}
 p{color:#aaa}
-section{padding:50px 20px;max-width:1000px;margin:auto}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card{background:#0d1117;border:1px solid #1f2937;padding:15px;border-radius:15px;transition:.3s}
-.card:hover{transform:scale(1.05);box-shadow:0 0 20px #00ff99}
-.price{color:#00ff99;font-size:20px;margin:10px 0}
-button{width:100%;padding:10px;border:none;border-radius:10px;cursor:pointer;font-weight:bold;background:linear-gradient(90deg,#00ff99,#00aaff,#7c3aed);color:#000}
-.whatsapp{display:block;text-align:center;margin-top:20px;background:#25D366;color:#000;padding:12px;border-radius:10px;text-decoration:none;font-weight:bold}
-.cart{position:fixed;bottom:20px;left:20px;background:#111827;padding:15px;border-radius:10px;border:1px solid #00ff99;width:250px}
-.total{color:#00aaff;margin-top:10px;font-weight:bold}
+section{padding:60px 20px;max-width:1100px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:rgba(10,15,25,0.7);backdrop-filter:blur(12px);border:1px solid rgba(0,255,153,0.2);padding:18px;border-radius:18px;transition:.4s}
+.card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 0 25px #00ff99}
+button{width:100%;padding:12px;border:none;border-radius:12px;cursor:pointer;font-weight:bold;background:linear-gradient(90deg,#00ff99,#00aaff,#7c3aed);color:#000}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:30px}
+.feature{background:#0d1117;padding:15px;border-radius:12px;border:1px solid #1f2937;text-align:center}
+.cart{position:fixed;bottom:0;left:0;width:100%;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);border-top:1px solid #00ff99;padding:15px;display:flex;justify-content:space-between;align-items:center}
+.total{color:#00aaff;font-weight:bold}
+.checkout{background:#00ff99;border:none;padding:10px 20px;border-radius:10px;cursor:pointer;font-weight:bold}
+footer{text-align:center;padding:50px 20px;color:#666}
 </style>
 
 </head>
@@ -32,69 +35,53 @@ button{width:100%;padding:10px;border:none;border-radius:10px;cursor:pointer;fon
 <div class="bg"></div>
 
 <header>
-<h1>Neon Store Pro</h1>
-<p>بيع مواقع ومتاجر وقوالب احترافية</p>
+<h1>Sci-Fi Neon Store</h1>
+<p>متجر مواقع مستقبلية بتصميم خيالي</p>
 </header>
 
 <section>
-<h2>🔥 المواقع</h2>
-<div class="grid">
-
-<div class="card">
-<h3>موقع شركة</h3>
-<p>تصميم احترافي + واتساب</p>
-<div class="price">500 جنيه</div>
-<button onclick="add('موقع شركة',500)">أضف للسلة</button>
-</div>
-
-<div class="card">
-<h3>موقع مطعم</h3>
-<p>منيو + طلب واتساب</p>
-<div class="price">400 جنيه</div>
-<button onclick="add('موقع مطعم',400)">أضف للسلة</button>
-</div>
-
-<div class="card">
-<h3>موقع عيادة</h3>
-<p>حجز + خدمات</p>
-<div class="price">600 جنيه</div>
-<button onclick="add('موقع عيادة',600)">أضف للسلة</button>
-</div>
-
+<div class="features">
+<div class="feature">⚡ سرعة عالية</div>
+<div class="feature">🚀 تصميم خيالي</div>
+<div class="feature">💎 جاهز للبيع</div>
+<div class="feature">📱 متجاوب</div>
 </div>
 </section>
 
 <section>
-<h2>🛒 المتاجر</h2>
+<h2>🔥 المنتجات</h2>
+
 <div class="grid">
 
 <div class="card">
-<h3>متجر كامل</h3>
-<p>سلة + منتجات</p>
-<div class="price">1200 جنيه</div>
-<button onclick="add('متجر كامل',1200)">أضف للسلة</button>
+<h3>موقع شركة فضائي</h3>
+<p>تصميم احترافي مستقبلّي</p>
+<button onclick="add('موقع شركة فضائي',500)">إضافة</button>
 </div>
 
 <div class="card">
-<h3>متجر بسيط</h3>
-<p>عرض + واتساب</p>
-<div class="price">700 جنيه</div>
-<button onclick="add('متجر بسيط',700)">أضف للسلة</button>
+<h3>متجر ذكي</h3>
+<p>سلة + تصميم SaaS</p>
+<button onclick="add('متجر ذكي',1200)">إضافة</button>
+</div>
+
+<div class="card">
+<h3>موقع مطعم 3D</h3>
+<p>منيو تفاعلي</p>
+<button onclick="add('مطعم 3D',400)">إضافة</button>
 </div>
 
 </div>
 </section>
 
-<section>
-<h2>💬 واتساب</h2>
-<a class="whatsapp" href="https://wa.me/201000000000?text=أريد%20تصميم%20موقع">اطلب الآن</a>
-</section>
+<footer>
+Neon Sci-Fi Store ©
+</footer>
 
 <div class="cart">
-<h3>🛒 السلة</h3>
-<div id="items">فارغة</div>
+<div>🛒 <span id="items">فارغة</span></div>
 <div class="total">الإجمالي: <span id="total">0</span></div>
-<button onclick="checkout()">إرسال الطلب</button>
+<button class="checkout" onclick="checkout()">اطلب</button>
 </div>
 
 <script>
@@ -108,17 +95,16 @@ render();
 }
 
 function render(){
-items.innerHTML=cart.length?cart.map(c=>"• "+c.n).join("<br>"):"فارغة";
+items.innerHTML=cart.length?cart.map(c=>"• "+c.n).join(" | "):"فارغة";
 totalEl.innerText=total;
 }
 
 function checkout(){
-if(!cart.length)return alert("السلة فارغة");
+if(!cart.length)return alert("فارغة");
 let msg="طلب:%0A";
-cart.forEach(c=>msg+=`- ${c.n} (${c.p})%0A`);
+cart.forEach(c=>msg+=c.n+" ("+c.p+")%0A");
 window.open("https://wa.me/201000000000?text="+msg,"_blank");
 }
-
 </script>
 
 </body>
