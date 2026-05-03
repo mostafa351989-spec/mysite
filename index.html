@@ -2,57 +2,54 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>مطعم الذوق الشرقي</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Ultra Store</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Tahoma,Arial,sans-serif;background:#111;color:#fff;line-height:1.6}
-header{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80') center/cover;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
-header h1{font-size:48px;color:#f9b233;margin-bottom:15px}
-header p{font-size:20px;max-width:600px}
-.btn{display:inline-block;margin-top:25px;padding:12px 28px;background:#f9b233;color:#111;text-decoration:none;font-weight:bold;border-radius:30px}
-section{padding:60px 20px;max-width:1100px;margin:auto}
-h2{text-align:center;margin-bottom:30px;color:#f9b233}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#1b1b1b;padding:20px;border-radius:12px;text-align:center;border:1px solid #333}
-.price{font-size:22px;color:#f9b233;margin-top:10px}
-.contact{text-align:center}
-footer{text-align:center;padding:25px;background:#000;color:#aaa}
+body{margin:0;font-family:Tahoma;background:#05060a;color:#fff;overflow-x:hidden}
+.bg{position:fixed;inset:0;background:radial-gradient(circle at 20% 20%,#00ff99,transparent 40%),radial-gradient(circle at 80% 30%,#00aaff,transparent 40%),radial-gradient(circle at 50% 80%,#7c3aed,transparent 40%);filter:blur(60px);opacity:0.25;animation:move 8s infinite alternate;z-index:-1}
+@keyframes move{0%{transform:scale(1)}100%{transform:scale(1.2) translate(30px,20px)}}
+header{text-align:center;padding:40px}
+h1{color:#00ff99;text-shadow:0 0 20px #00ff99}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:20px}
+.card{background:#0d1117;padding:15px;border-radius:15px;border:1px solid #1f2937;transition:.3s}
+.card:hover{transform:scale(1.05);box-shadow:0 0 20px #00ff99}
+button{width:100%;padding:10px;border:none;border-radius:10px;cursor:pointer;background:linear-gradient(90deg,#00ff99,#00aaff,#7c3aed);color:#000;font-weight:bold}
+.cart{position:fixed;bottom:20px;left:20px;background:#111827;padding:15px;border-radius:10px;border:1px solid #00ff99;width:220px}
 </style>
 </head>
 <body>
 
+<div class="bg"></div>
+
 <header>
-<h1>مطعم الذوق الشرقي</h1>
-<p>أشهى المأكولات الشرقية والمشاوي الطازجة يوميًا بأفضل جودة وخدمة سريعة</p>
-<a href="#menu" class="btn">شاهد المنيو</a>
+<h1>Neon Ultra Store</h1>
+<p>بيع مواقع ومتاجر جاهزة</p>
 </header>
 
-<section>
-<h2>من نحن</h2>
-<p style="text-align:center;max-width:700px;margin:auto">
-نقدم تجربة طعام مميزة تجمع بين الطعم الأصيل والخدمة الممتازة.
-</p>
-</section>
-
-<section id="menu">
-<h2>المنيو</h2>
 <div class="grid">
-<div class="card"><h3>مشاوي مشكلة</h3><p>كباب - كفتة - شيش</p><div class="price">220 جنيه</div></div>
-<div class="card"><h3>شاورما فراخ</h3><p>ساندوتش كبير</p><div class="price">95 جنيه</div></div>
-<div class="card"><h3>بيتزا شرقي</h3><p>جبنة - لحمة</p><div class="price">140 جنيه</div></div>
-<div class="card"><h3>وجبة عائلية</h3><p>تكفي 4 أفراد</p><div class="price">450 جنيه</div></div>
+<div class="card">
+<h3>موقع شركة</h3>
+<p>تصميم احترافي</p>
+<button onclick="add('موقع شركة',500)">إضافة</button>
 </div>
-</section>
 
-<section class="contact">
-<h2>اطلب الآن</h2>
-<p>📞 01000000000</p>
-<p>📍 طنطا - شارع البحر</p>
-<a class="btn" href="https://wa.me/201000000000">اطلب واتساب</a>
-</section>
+<div class="card">
+<h3>متجر إلكتروني</h3>
+<p>سلة + منتجات</p>
+<button onclick="add('متجر',1200)">إضافة</button>
+</div>
+</div>
 
-<footer>© 2026 مطعم الذوق الشرقي</footer>
+<div class="cart">
+<h3>🛒 السلة</h3>
+<div id="list">فارغة</div>
+</div>
+
+<script>
+let cart=[]
+function add(n,p){cart.push(n);render()}
+function render(){list.innerHTML=cart.length?cart.join("<br>"):"فارغة"}
+</script>
 
 </body>
 </html>
